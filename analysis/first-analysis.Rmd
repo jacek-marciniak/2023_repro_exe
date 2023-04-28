@@ -1,0 +1,23 @@
+---
+title: "first-analysis"
+author: "jacek-marciniak"
+date: "2023-04-28"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+theme_set(theme_minimal())
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","darkorchid","cyan4")) +
+  labs(title = 'Penguin flipper lengths',
+       x='Flipper length (cm)',
+       y = 'Frequency')
+```
+
